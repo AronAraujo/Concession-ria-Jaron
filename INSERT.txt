@@ -1,0 +1,68 @@
+
+INSERT INTO pessoa (Cpf, Nome, RG, logradouro, cidade, pais, estado, data_nasc, CEP, numero)
+VALUES ('11111111111', 'Maria Oliveira', 987654321, 'Avenida XYZ', 'Cidade B', 'Pais B', 'BB', '1985-03-15', '54321098', 456);
+INSERT INTO pessoa (Cpf, Nome, RG, logradouro, cidade, pais, estado, data_nasc, CEP, numero)
+VALUES ('22222222222', 'Carlos Santos', 654321987, 'Rua LMN', 'Cidade C', 'Pais C', 'CC', '1992-07-22', '98765432', 789);
+INSERT INTO pessoa (Cpf, Nome, RG, logradouro, cidade, pais, estado, data_nasc, CEP, numero)
+VALUES ('33333333333', 'Ana Souza', 123789456, 'Rua PQR', 'Cidade D', 'Pais D', 'DD', '1980-12-05', '45678901', 123);
+INSERT INTO pessoa (Cpf, Nome, RG, logradouro, cidade, pais, estado, data_nasc, CEP, numero)
+VALUES ('44444444444', 'Rodrigo Lima', 456789123, 'Avenida UVW', 'Cidade E', 'Pais E', 'EE', '1995-09-10', '23456789', 567);
+INSERT INTO pessoa (Cpf, Nome, RG, logradouro, cidade, pais, estado, data_nasc, CEP, numero)
+VALUES ('55555555555', 'Fernanda Costa', 789456123, 'Rua GHI', 'Cidade F', 'Pais F', 'FF', '1988-04-30', '87654321', 890);
+INSERT INTO pessoa (Cpf, Nome, RG, logradouro, cidade, pais, estado, data_nasc, CEP, numero)
+VALUES ('66666666666', 'Lucas Pereira', 321654987, 'Avenida JKL', 'Cidade G', 'Pais G', 'GG', '1998-11-18', '32109876', 234);
+
+-- Cliente 1
+INSERT INTO cliente (CpfP, CNH)
+VALUES ('11111111111', 1234567890);
+
+-- Cliente 2
+INSERT INTO cliente (CpfP, CNH)
+VALUES ('33333333333', 9876543210);
+
+-- Cliente 3
+INSERT INTO cliente (CpfP, CNH)
+VALUES ('55555555555', 6543210987);
+
+-- Funcionário 1
+INSERT INTO funcionario (CpfP, salario, data_adimissao, meta, RegistroFaturamento, comissao)
+VALUES ('22222222222', 5000.00, '2020-02-15', 100000.00, 90000.00, 0.05);
+
+-- Funcionário 2
+INSERT INTO funcionario (CpfP, salario, data_adimissao, meta, RegistroFaturamento, comissao)
+VALUES ('44444444444', 6000.00, '2019-08-10', 120000.00, 110000.00, 0.07);
+
+-- Funcionário 3
+INSERT INTO funcionario (CpfP, salario, data_adimissao, meta, RegistroFaturamento, comissao)
+VALUES ('66666666666', 5500.00, '2021-05-20', 110000.00, 100000.00, 0.06);
+
+-- Veículo 1
+INSERT INTO veiculo (Chassi, cor, modelo, marca, placa, ano, valor)
+VALUES ('AA11111111111111', 'Prata', 'Hatch', 'Marca X', 'XYZ9876', '2021', 35000.00);
+
+-- Veículo 2
+INSERT INTO veiculo (Chassi, cor, modelo, marca, placa, ano, valor)
+VALUES ('BB22222222222222', 'Preto', 'SUV', 'Marca Y', 'ABC1234', '2022', 45000.00);
+
+-- Veículo 3
+INSERT INTO veiculo (Chassi, cor, modelo, marca, placa, ano, valor)
+VALUES ('CC33333333333333', 'Branco', 'Sedan', 'Marca Z', 'DEF5678', '2020', 30000.00);
+
+
+-- Compra/Venda 1
+INSERT INTO compra_venda (Veiculo, Funcionario, Cliente)
+VALUES ('AA11111111111111', '22222222222', '11111111111' '2023-01-01', '10:30:00');
+-- Compra/Venda 2
+
+INSERT INTO compra_venda (Veiculo, Funcionario, Cliente, data, hora)
+VALUES ('BB22222222222222', '44444444444', '33333333333', '2023-01-01', '10:30:00');
+
+-- Compra/Venda 3
+INSERT INTO compra_venda (Veiculo, Funcionario, Cliente, data, hora)
+VALUES ('CC33333333333333', '66666666666', '55555555555' '2023-01-01', '10:30:00');
+
+
+
+
+
+

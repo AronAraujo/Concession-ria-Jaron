@@ -1,0 +1,50 @@
+Carro com o maior valor:
+SELECT * FROM veiculo
+ORDER BY valor DESC;
+
+venda mais cara:
+SELECT veiculo.*
+FROM veiculo
+JOIN compra_venda ON veiculo.Chassi = compra_venda.Veiculo
+ORDER BY veiculo.valor DESC;
+
+Modelo de carro mais vendido:
+SELECT veiculo.*, COUNT(*) AS total_vendas
+FROM veiculo
+JOIN compra_venda ON veiculo.Chassi = compra_venda.Veiculo
+GROUP BY veiculo.modelo
+ORDER BY total_vendas DESC;
+
+Funcionário que mais vendeu:
+SELECT pessoa.*, funcionario.salario, funcionario.data_adimissao, funcionario.meta, funcionario.RegistroFaturamento, funcionario.comissao, COUNT(compra_venda.Funcionario) AS total_vendas
+FROM pessoa
+JOIN funcionario ON pessoa.Cpf = funcionario.CpfP
+JOIN compra_venda ON funcionario.CpfP = compra_venda.Funcionario
+WHERE funcionario.CpfP = (
+    SELECT Funcionario
+    FROM compra_venda
+    GROUP BY Funcionario
+    ORDER BY COUNT(*) DESC
+    LIMIT 1
+)
+GROUP BY pessoa.Cpf;
+
+Cliente que mais comprou:
+SELECT pessoa.*, cliente.CNH, COUNT(compra_venda.Cliente) AS total_compras
+FROM pessoa
+JOIN cliente ON pessoa.Cpf = cliente.CpfP
+JOIN compra_venda ON cliente.CpfP = compra_venda.Cliente
+WHERE cliente.CpfP = (
+    SELECT Cliente
+    FROM compra_venda
+    GROUP BY Cliente
+    ORDER BY COUNT(*) DESC
+    LIMIT 1
+)
+GROUP BY pessoa.Cpf;
+
+
+carro mais atual:
+SELECT *
+FROM veiculo
+ORDER BY ano DESC;
